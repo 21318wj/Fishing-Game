@@ -1,8 +1,8 @@
 package port2;
 
-public class Á¤º¸ {
+public class ì •ë³´ {
 	static int ex;
-	static String ÄªÈ£;
+	static String ì¹­í˜¸;
 	public void exp(Op o) {
 	
 		switch(o.LV) {
@@ -91,7 +91,7 @@ public class Á¤º¸ {
 			ex = 280;
 			break;
 		case 29:
-			ex = 290
+			ex = 290;
 			break;
 		case 30:
 			ex = 300;
@@ -101,31 +101,31 @@ public class Á¤º¸ {
 		
 	public void infor(Op o) {
 		
-		System.out.println("¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ");
+		System.out.println("â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡");
 		
 		if(o.LV<=5) {
-			ÄªÈ£ = "¡ßÃÊº¸ ³¬½Ã²Û";
+			ì¹­í˜¸ = "â—†ì´ˆë³´ ë‚šì‹œê¾¼";
 			System.out.print("          ");
 		} else if(o.LV<=10) {
-			ÄªÈ£ = "¢¼°ß½À ³¬½Ã²Û";
+			ì¹­í˜¸ = "â™ ê²¬ìŠµ ë‚šì‹œê¾¼";
 			System.out.print("          ");
 		} else if(o.LV<=15) {
-			ÄªÈ£ = "¡Ù°æÇè ¸¹Àº ³¬½Ã²Û";	
+			ì¹­í˜¸ = "â˜†ê²½í—˜ ë§Žì€ ë‚šì‹œê¾¼";	
 			System.out.print("        ");
 		} else if(o.LV<=20) {
-			ÄªÈ£ = "¡Ú¹èÅ×¶û ³¬½Ã²Û";
+			ì¹­í˜¸ = "â˜…ë°°í…Œëž‘ ë‚šì‹œê¾¼";
 	        System.out.print("        ");
 		} else {
-			ÄªÈ£ = "¡×Àü¼³ÀÇ ³¬½Ã²Û";
+			ì¹­í˜¸ = "Â§ì „ì„¤ì˜ ë‚šì‹œê¾¼";
 			System.out.print("         ");
 		}
 
 		
-		System.out.println(ÄªÈ£);
+		System.out.println(ì¹­í˜¸);
 		System.out.println("-LV:"+o.LV);
 		System.out.println("-EXP:"+ex+"/"+o.EXP);
-		System.out.println("-º¸À¯ÇÑ µ·: "+o.money+"¿ø");
-		System.out.println("¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ¡Þ");
+		System.out.println("-ë³´ìœ í•œ ëˆ: "+o.money+"ì›");
+		System.out.println("â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡â—‡");
 	}
 		
 		
