@@ -1,861 +1,1907 @@
 package port2;
 
-public class Book {
+import java.util.*;
 
-	public void µµ°¨(Op o) {
-		switch(o.µµ°¨) {
+public class Fish {
+	static Random r = new Random();
+	static int pro;
+	static double size;
+	static String fh;
+	ì •ë³´ ì •ë³´ = new ì •ë³´();
+		
+	public void ë§µ(Op o) {
+		switch(o.MAP) {
 		case 1: 
-			µµ°¨_È£¼ö(o);
+			í˜¸ìˆ˜_ë¬¼ê³ ê¸°(o);
 			break;
-		case 2:
-			µµ°¨_°­(o);
+		case 2: 
+			ê°•_ë¬¼ê³ ê¸°(o);
 			break;
 		case 3:
-			µµ°¨_´ËÁö´ë(o);
+			ëŠªì§€ëŒ€_ë¬¼ê³ ê¸°(o);
 			break;
 		case 4:
-			µµ°¨_¹Ù´Ù(o);
+			ë°”ë‹¤_ë¬¼ê³ ê¸°(o);
 			break;
 		case 5:
-			µµ°¨_½ÉÇØ(o);
+			ì‹¬í•´_ë¬¼ê³ ê¸°(o);
 			break;
 		case 6:
-			µµ°¨_°í´ë(o);
+			ê³ ëŒ€_ë¬¼ê³ ê¸°(o);
+			break;
+		}
+	}
+	
+	private void ê³ ëŒ€_ë¬¼ê³ ê¸°(Op o) {
+		pro = Math.abs(r.nextInt(10000)+1);
+		
+		if(pro<=9200) {
+			System.out.println("ì•„ë¬´ê²ƒë„ ë‚šì´ì§€ ì•Šì•˜ë‹¤...");
+		} else if(pro<=9300){
+			fh = "ì•”ëª¨ë‚˜ì´íŠ¸";
+			ê³ ëŒ€_í¬ê¸°("ì•”ëª¨ë‚˜ì´íŠ¸", o);
+		} else if(pro<=9400){
+			fh = "ì‹¤ëŸ¬ìº”ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("ì‹¤ëŸ¬ìº”ìŠ¤", o);
+		} else if(pro<=9500){
+			fh = "ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤", o);
+		} else if(pro<=9600){
+			fh = "í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤", o);
+		} else if(pro<=9700){
+			fh = "ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤", o);
+		} else if(pro<=9800){
+			fh = "ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤", o);
+		} else if(pro<=9900){
+			fh = "ì‚¼ì—½ì¶©";
+			ì‹¬í•´_í¬ê¸°("ì‚¼ì—½ì¶©", o);
+		} else {
+			fh = "ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤", o);
+		}
+	}
+
+	private void ê³ ëŒ€_í¬ê¸°(String kd, Op o) {
+		double b = 0;
+		Random r = new Random();
+		switch(kd) {
+			case "ì•”ëª¨ë‚˜ì´íŠ¸":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+1);
+				}
+				size = Math.abs(r.nextDouble(180)+20+b);
+				o.ì•”ëª¨ë‚˜ì´íŠ¸++;	
+				System.out.print("ì•”ëª¨ë‚˜ì´íŠ¸(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì•”ëª¨ë‚˜ì´íŠ¸) {
+					o.ì•”ëª¨ë‚˜ì´íŠ¸s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;
+			case "ì‹¤ëŸ¬ìº”ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(40)+1);
+				}
+				size = Math.abs(r.nextDouble(150)+40+b);
+				o.ì‹¤ëŸ¬ìº”ìŠ¤++;
+				System.out.print("ì‹¤ëŸ¬ìº”ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‹¤ëŸ¬ìº”ìŠ¤s) {
+					o.ì‹¤ëŸ¬ìº”ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;
+			case "ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(150)+1);
+				}
+				size = Math.abs(r.nextDouble(300)+900+b);				
+				o.ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤++;
+				System.out.print("ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤s) {
+					o.ëª¨ì‚¬ì‚¬ìš°ë£¨ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;	
+			case "í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(100)+1);
+				}
+				size = Math.abs(r.nextDouble(200)+300+b);
+				o.í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤++;
+				System.out.print("í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤s) {
+					o.í”Œë ˆì‹œì˜¤ì‚¬ìš°ë¥´ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;	
+			case "ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(100)+1);
+				}
+				size = Math.abs(r.nextDouble(100)+200+b);
+				o.ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤++;
+				System.out.print("ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤s) {
+					o.ìµí‹°ì˜¤ì‚¬ìš°ë¥´ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;	
+			case "ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				size = Math.abs(r.nextDouble(40)+20+b);
+				o.ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤++;
+				System.out.print("ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ì„ ë‚šì•˜ë‹¤.");
+				if(size > o.ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤s) {
+					o.ì•„ë…¸ë§ë¡œì¹´ë¦¬ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;	
+			case "ì‚¼ì—½ì¶©":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(72)+b);
+				o.ì‚¼ì—½ì¶©++;
+				System.out.print("ì‚¼ì—½ì¶©");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‚¼ì—½ì¶©s) {
+					o.ì‚¼ì—½ì¶©s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;	
+			case "ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(70)+1);
+				}
+				size = Math.abs(r.nextDouble(100)+150+b);
+				o.ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤++;
+				System.out.print("ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤s) {
+					o.ì•¼ì´ì¼ˆë¡­í…Œë£¨ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ê³ ëŒ€(o);
+				break;			
+		}
+		ì •ë³´.LV_UP(o);
+		ë‚šì‹¯ëŒ€ch(o);
+		ì°Œch(o);
+		ë¯¸ë¼ch(o);
+	}
+
+	private void ì‹¬í•´_ë¬¼ê³ ê¸°(Op o) {
+		pro = Math.abs(r.nextInt(10000)+1);
+		
+		if(pro<=1500) {
+			fh = "ì‚°ê°ˆì¹˜";
+			ì‹¬í•´_í¬ê¸°("ì‚°ê°ˆì¹˜", o);
+		} else if(pro<=3000){
+			fh = "íˆ¬ë¼ì¹˜ë¥˜";
+			ì‹¬í•´_í¬ê¸°("íˆ¬ë¼ì¹˜ë¥˜", o);
+		} else if(pro<=4500){
+			fh = "ë°œê´‘ì˜¤ì§•ì–´";
+			ì‹¬í•´_í¬ê¸°("ë°œê´‘ì˜¤ì§•ì–´", o);
+		} else if(pro<=6000){
+			fh = "ì„¤ì¸ê²Œ";
+			ì‹¬í•´_í¬ê¸°("ì„¤ì¸ê²Œ", o);
+		} else if(pro<=6500){
+			fh = "ìŠ¤íŒ…ë ˆì´";
+			ì‹¬í•´_í¬ê¸°("ìŠ¤íŒ…ë ˆì´", o);
+		} else if(pro<=7000){
+			fh = "ë‚˜ë­‡ìí•´ë£¡";
+			ì‹¬í•´_í¬ê¸°("ë‚˜ë­‡ìí•´ë£¡", o);
+		} else if(pro<=7500){
+			fh = "ë¦¬ë³¸ì¥ì–´";
+			ì‹¬í•´_í¬ê¸°("ë¦¬ë³¸ì¥ì–´", o);
+		} else if(pro<=8000){
+			fh = "í•´íŒŒë¦¬";
+			ì‹¬í•´_í¬ê¸°("í•´íŒŒë¦¬", o);
+		} else if(pro<=8500){
+			fh = "ì „ê¸°ê°€ì˜¤ë¦¬";
+			ì‹¬í•´_í¬ê¸°("ì „ê¸°ê°€ì˜¤ë¦¬", o);
+		} else if(pro<=8700){
+			fh = "ì‹¬í•´ì•…ì¹˜";
+			ì‹¬í•´_í¬ê¸°("ì‹¬í•´ì•…ì¹˜", o);
+		} else if(pro<=8900){
+			fh = "ì‹¬í•´ì•„ê·€";
+			ì‹¬í•´_í¬ê¸°("ì‹¬í•´ì•„ê·€", o);
+		} else if(pro<=9100){
+			fh = "íŒ°ë¦¬ì»¨ì¥ì–´";
+			ì‹¬í•´_í¬ê¸°("íŒ°ë¦¬ì»¨ì¥ì–´", o);
+		} else if(pro<=9300) {
+			fh = "í•´ì²´íŠ¸í”¼ì‹œ";
+			ì‹¬í•´_í¬ê¸°("í•´ì²´íŠ¸í”¼ì‹œ", o);
+		} else if(pro<=9500) {
+			fh = "ë¸”ë£¹í”¼ì‹œ";
+			ì‹¬í•´_í¬ê¸°("ë¸”ë£¹í”¼ì‹œ", o);
+		} else if(pro<=9700) {
+			fh = "ì´ˆë¡±ì•„ê·€";
+			ì‹¬í•´_í¬ê¸°("ì´ˆë¡±ì•„ê·€", o);
+		} else if(pro<=9850) {
+			fh = "í¬ë¼ì¼„";
+			ì‹¬í•´_í¬ê¸°("í¬ë¼ì¼„", o);
+		} else {
+			fh = "íŒ½íˆ¬ìŠ¤";
+			ì‹¬í•´_í¬ê¸°("íŒ½íˆ¬ìŠ¤", o);
+		}
+	}
+
+	private void ì‹¬í•´_í¬ê¸°(String kd, Op o) {
+		double b = 0;
+		Random r = new Random();
+		switch(kd) {
+			case "ì‚°ê°ˆì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(300)+1);
+				}
+				size = Math.abs(r.nextDouble(1000)+500+b);
+				o.ì‚°ê°ˆì¹˜++;	
+				System.out.print("ì‚°ê°ˆì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‚°ê°ˆì¹˜s) {
+					o.ì‚°ê°ˆì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "íˆ¬ë¼ì¹˜ë¥˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+1);
+				}
+				size = Math.abs(r.nextDouble(100)+150+b);
+				o.íˆ¬ë¼ì¹˜ë¥˜++;
+				System.out.print("íˆ¬ë¼ì¹˜ë¥˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.íˆ¬ë¼ì¹˜ë¥˜s) {
+					o.íˆ¬ë¼ì¹˜ë¥˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ì„¤ì¸ê²Œ":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(15)+30+b);				
+				o.ì„¤ì¸ê²Œ++;
+				System.out.print("ì„¤ì¸ê²Œ(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì„¤ì¸ê²Œs) {
+					o.ì„¤ì¸ê²Œs = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë°œê´‘ì˜¤ì§•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(10)+20+b);
+				o.ë°œê´‘ì˜¤ì§•ì–´++;
+				System.out.print("ë°œê´‘ì˜¤ì§•ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë°œê´‘ì˜¤ì§•ì–´s) {
+					o.ë°œê´‘ì˜¤ì§•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;	
+			case "ìŠ¤íŒ…ë ˆì´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(100)+50);
+				}
+				size = Math.abs(r.nextDouble(100)+700+b);
+				o.ìŠ¤íŒ…ë ˆì´++;
+				System.out.print("ìŠ¤íŒ…ë ˆì´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ìŠ¤íŒ…ë ˆì´s) {
+					o.ìŠ¤íŒ…ë ˆì´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;	
+			case "ë‚˜ë­‡ìí•´ë£¡":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(14)+20+b);
+				o.ë‚˜ë­‡ìí•´ë£¡++;
+				System.out.print("ë‚˜ë­‡ìí•´ë£¡(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ì„ ë‚šì•˜ë‹¤.");
+				if(size > o.ë‚˜ë­‡ìí•´ë£¡s) {
+					o.ë‚˜ë­‡ìí•´ë£¡s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë¦¬ë³¸ì¥ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(30)+1);
+				}
+				size = Math.abs(r.nextDouble(40)+90+b);
+				o.ë¦¬ë³¸ì¥ì–´++;
+				System.out.print("ë¦¬ë³¸ì¥ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¦¬ë³¸ì¥ì–´s) {
+					o.ë¦¬ë³¸ì¥ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;	
+			case "í•´íŒŒë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(7)+1);
+				}
+				size = Math.abs(r.nextDouble(15)+5+b);
+				o.í•´íŒŒë¦¬++;
+				System.out.print("í•´íŒŒë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í•´íŒŒë¦¬s) {
+					o.í•´íŒŒë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ì „ê¸°ê°€ì˜¤ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(20)+30+b);
+				o.ì „ê¸°ê°€ì˜¤ë¦¬++;
+				System.out.print("ì „ê¸°ê°€ì˜¤ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì „ê¸°ê°€ì˜¤ë¦¬s) {
+					o.ì „ê¸°ê°€ì˜¤ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;
+			case "ì‹¬í•´ì•…ì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				size = Math.abs(r.nextDouble(50)+50+b);
+				o.ì‹¬í•´ì•…ì¹˜++;
+				System.out.print("ì‹¬í•´ì•…ì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‹¬í•´ì•…ì¹˜s) {
+					o.ì‹¬í•´ì•…ì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;			
+			case "ì‹¬í•´ì•„ê·€":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+1);
+				}
+				size = Math.abs(r.nextDouble(380)+20+b);
+				o.ì‹¬í•´ì•„ê·€++;
+				System.out.print("ì‹¬í•´ì•„ê·€(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‹¬í•´ì•„ê·€s) {
+					o.ì‹¬í•´ì•„ê·€s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;			
+			case "íŒ°ë¦¬ì»¨ì¥ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				o.íŒ°ë¦¬ì»¨ì¥ì–´++;	
+				size = Math.abs(r.nextDouble(50)+50+b);
+				System.out.print("íŒ°ë¦¬ì»¨ì¥ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.íŒ°ë¦¬ì»¨ì¥ì–´s) {
+					o.íŒ°ë¦¬ì»¨ì¥ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;	
+			case "í•´ì²´íŠ¸í”¼ì‹œ":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(2)+1);
+				}
+				o.í•´ì²´íŠ¸í”¼ì‹œ++;
+				size = Math.abs(r.nextDouble(2)+3+b);
+				System.out.print("í•´ì²´íŠ¸í”¼ì‹œ(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í•´ì²´íŠ¸í”¼ì‹œs) {
+					o.í•´ì²´íŠ¸í”¼ì‹œs = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ë¸”ë£¹í”¼ì‹œ":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				o.ë¸”ë£¹í”¼ì‹œ++;
+				size = Math.abs(r.nextDouble(5)+30+b);
+				System.out.print("ë¸”ë£¹í”¼ì‹œ(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¸”ë£¹í”¼ì‹œs) {
+					o.ë¸”ë£¹í”¼ì‹œs = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ì´ˆë¡±ì•„ê·€":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				o.ì´ˆë¡±ì•„ê·€++;
+				size = Math.abs(r.nextDouble(15)+50+b);
+				System.out.print("ì´ˆë¡±ì•„ê·€(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì´ˆë¡±ì•„ê·€s) {
+					o.ì´ˆë¡±ì•„ê·€s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "í¬ë¼ì¼„":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(1000)+1);
+				}
+				o.í¬ë¼ì¼„++;
+				size = Math.abs(r.nextDouble(2000)+1500+b);
+				System.out.print("í¬ë¼ì¼„(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ì„ ë‚šì•˜ë‹¤.");
+				if(size > o.í¬ë¼ì¼„) {
+					o.ëŒê³ ë˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì „ì„¤(o);
+				break;		
+			case "íŒ½íˆ¬ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(300)+1);
+				}
+				o.íŒ½íˆ¬ìŠ¤++;
+				size = Math.abs(r.nextDouble(300)+1500+b);
+				System.out.print("íŒ½íˆ¬ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.íŒ½íˆ¬ìŠ¤s) {
+					o.íŒ½íˆ¬ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì „ì„¤(o);
+				break;		
+		}
+		ì •ë³´.LV_UP(o);
+		ë‚šì‹¯ëŒ€ch(o);
+		ì°Œch(o);
+		ë¯¸ë¼ch(o);
+	}
+
+	private void ë°”ë‹¤_ë¬¼ê³ ê¸°(Op o) {
+		pro = Math.abs(r.nextInt(10000)+1);
+		
+		if(pro<=1000) {
+			fh = "ì˜¤ì§•ì–´";
+			ë°”ë‹¤_í¬ê¸°("ì˜¤ì§•ì–´", o);
+		} else if(pro<=2000){
+			fh = "ê°ˆì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ê°ˆì¹˜", o);
+		} else if(pro<=3000){
+			fh = "ë©¸ì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ë©¸ì¹˜", o);
+		} else if(pro<=4000){
+			fh = "ê½ì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ê½ì¹˜", o);
+		} else if(pro<=5000){
+			fh = "ì‚¼ì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ì‚¼ì¹˜", o);
+		} else if(pro<=6000){
+			fh = "ë°©ì–´";
+			ë°”ë‹¤_í¬ê¸°("ë°©ì–´", o);
+		} else if(pro<=7000){
+			fh = "ë”";
+			ë°”ë‹¤_í¬ê¸°("ë”", o);
+		} else if(pro<=7300){
+			fh = "ìš°ëŸ­";
+			ë°”ë‹¤_í¬ê¸°("ìš°ëŸ­", o);
+		} else if(pro<=7600){
+			fh = "ì°¸ì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ì°¸ì¹˜", o);
+		} else if(pro<=7900){
+			fh = "ë¶ˆê°€ì‚¬ë¦¬";
+			ë°”ë‹¤_í¬ê¸°("ë¶ˆê°€ì‚¬ë¦¬", o);
+		} else if(pro<=8200){
+			fh = "ì²­ìƒˆì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ì²­ìƒˆì¹˜", o);
+		} else if(pro<=8500){
+			fh = "ìŠ¤íŒ…ë ˆì´";
+			ë°”ë‹¤_í¬ê¸°("ìŠ¤íŒ…ë ˆì´", o);
+		} else if(pro<=8800) {
+			fh = "ë³µì–´";
+			ë°”ë‹¤_í¬ê¸°("ë³µì–´", o);
+		} else if(pro<=9100) {
+			fh = "ê°œë³µì¹˜";
+			ë°”ë‹¤_í¬ê¸°("ê°œë³µì¹˜", o);
+		} else if(pro<=9250) {
+			fh = "ê³ ë˜ìƒì–´";
+			ë°”ë‹¤_í¬ê¸°("ê³ ë˜ìƒì–´", o);
+		} else if(pro<=9400) {
+			fh = "ëŒê³ ë˜";
+			ë°”ë‹¤_í¬ê¸°("ëŒê³ ë˜", o);
+		}  else if(pro<=9550) {
+			fh = "ë²”ê³ ë˜";
+			ë°”ë‹¤_í¬ê¸°("ë²”ê³ ë˜", o);
+		}  else if(pro<=9700) {
+			fh = "í†±ìƒì–´";
+			ë°”ë‹¤_í¬ê¸°("í†±ìƒì–´", o);
+		}  else if(pro<=9850) {
+			fh = "í°ìˆ˜ì—¼ê³ ë˜";
+			ë°”ë‹¤_í¬ê¸°("í°ìˆ˜ì—¼ê³ ë˜", o);
+		} else {
+			fh = "ë©”ê°ˆë¡œëˆ";
+			ë°”ë‹¤_í¬ê¸°("ë©”ê°ˆë¡œëˆ", o);
+		}
+	}
+
+	private void ë°”ë‹¤_í¬ê¸°(String kd, Op o) {
+		double b = 0;
+		Random r = new Random();
+		switch(kd) {
+			case "ì˜¤ì§•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(12)+14+b);
+				o.ì˜¤ì§•ì–´++;			
+				System.out.print("ì˜¤ì§•ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì˜¤ì§•ì–´s) {
+					o.ì˜¤ì§•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ê°ˆì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(4)+18+b);
+				o.ê°ˆì¹˜++;
+				System.out.print("ê°ˆì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê°ˆì¹˜s) {
+					o.ê°€ì‹œê³ ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ë©¸ì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(2)+1);
+				}
+				size = Math.abs(r.nextDouble(3)+1+b);				
+				o.ë©¸ì¹˜++;
+				System.out.print("ë©¸ì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë©¸ì¹˜s) {
+					o.ë©¸ì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ê½ì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(23)+20+b);
+				o.ê½ì¹˜++;
+				System.out.print("ê½ì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê½ì¹˜s) {
+					o.ê½ì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì‚¼ì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(10)+30+b);
+				o.ì‚¼ì¹˜++;
+				System.out.print("ì‚¼ì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‚¼ì¹˜s) {
+					o.ì‚¼ì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë°©ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				size = Math.abs(r.nextDouble(35)+30+b);
+				o.ë°©ì–´++;
+				System.out.print("ë°©ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë°©ì–´s) {
+					o.ë°©ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë”":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(20)+10);
+				o.ë”++;
+				System.out.print("ë”(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë”s) {
+					o.ë”s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ìš°ëŸ­":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				size = Math.abs(r.nextDouble(50)+25+b);
+				o.ìš°ëŸ­++;
+				System.out.print("ìš°ëŸ­(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ìš°ëŸ­s) {
+					o.ìš°ëŸ­s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ì°¸ì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+1);
+				}
+				size = Math.abs(r.nextDouble(250)+50+b);
+				o.ì°¸ì¹˜++;
+				System.out.print("ì°¸ì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì°¸ì¹˜s) {
+					o.ì°¸ì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;
+			case "ë¶ˆê°€ì‚¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(30)+25+b);
+				o.ë¶ˆê°€ì‚¬ë¦¬++;
+				System.out.print("ë„ë¡±ë‡½(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¶ˆê°€ì‚¬ë¦¬s) {
+					o.ë¶ˆê°€ì‚¬ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ì²­ìƒˆì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(100)+1);
+				}
+				size = Math.abs(r.nextDouble(350)+350+b);
+				o.ì²­ìƒˆì¹˜++;
+				System.out.print("ì²­ìƒˆì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì²­ìƒˆì¹˜s) {
+					o.ì²­ìƒˆì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ìŠ¤íŒ…ë ˆì´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(100)+1);
+				}
+				o.ìŠ¤íŒ…ë ˆì´++;
+				size = Math.abs(r.nextDouble(200)+500+b);
+				System.out.print("ìŠ¤íŒ…ë ˆì´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ìŠ¤íŒ…ë ˆì´s) {
+					o.ìŠ¤íŒ…ë ˆì´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;	
+			case "ë³µì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				o.ë³µì–´++;
+				size = Math.abs(r.nextDouble(10)+30+b);
+				System.out.print("ë³µì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë³µì–´s) {
+					o.ë³µì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;		
+			case "ê°œë³µì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(40)+1);
+				}
+				o.ê°œë³µì¹˜++;
+				size = Math.abs(r.nextDouble(100)+100+b);
+				System.out.print("ê°œë³µì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê°œë³µì¹˜s) {
+					o.ê°œë³µì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;		
+			case "ê³ ë˜ìƒì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(150)+1);
+				}
+				o.ê³ ë˜ìƒì–´++;
+				size = Math.abs(r.nextDouble(540)+500+b);
+				System.out.print("ê³ ë˜ìƒì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê³ ë˜ìƒì–´s) {
+					o.ê³ ë˜ìƒì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ëŒê³ ë˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+1);
+				}
+				o.ëŒê³ ë˜++;
+				size = Math.abs(r.nextDouble(100)+200+b);
+				System.out.print("ëŒê³ ë˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ëŒê³ ë˜s) {
+					o.ëŒê³ ë˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ë²”ê³ ë˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(150)+1);
+				}
+				o.ë²”ê³ ë˜++;
+				size = Math.abs(r.nextDouble(200)+600+b);
+				System.out.print("ë²”ê³ ë˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë²”ê³ ë˜s) {
+					o.ë²”ê³ ë˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "í†±ìƒì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+1);
+				}
+				o.í†±ìƒì–´++;
+				size = Math.abs(r.nextDouble(50)+150+b);
+				System.out.print("í†±ìƒì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í†±ìƒì–´s) {
+					o.í†±ìƒì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;
+			case "í°ìˆ˜ì—¼ê³ ë˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(300)+150);
+				}
+				o.í°ìˆ˜ì—¼ê³ ë˜++;
+				size = Math.abs(r.nextDouble(200)+2200+b);
+				System.out.print("í° ìˆ˜ì—¼ ê³ ë˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í°ìˆ˜ì—¼ê³ ë˜s) {
+					o.í°ìˆ˜ì—¼ê³ ë˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì „ì„¤(o);
+				break;
+			case "ë©”ê°ˆë¡œëˆ":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(250)+100);
+				}
+				o.ë©”ê°ˆë¡œëˆ++;
+				size = Math.abs(r.nextDouble(500)+1500+b);
+				System.out.print("ë©”ê°ˆë¡œëˆ(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ì„ ë‚šì•˜ë‹¤.");
+				if(size > o.ë©”ê°ˆë¡œëˆs) {
+					o.ë©”ê°ˆë¡œëˆs = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì „ì„¤(o);
+				break;
+		}
+		ì •ë³´.LV_UP(o);
+		ë‚šì‹¯ëŒ€ch(o);
+		ì°Œch(o);
+		ë¯¸ë¼ch(o);
+	}
+
+	private void ëŠªì§€ëŒ€_ë¬¼ê³ ê¸°(Op o) {
+		pro = Math.abs(r.nextInt(10000)+1);
+		
+		if(pro<=1000) {
+			fh = "í”¼ë¼ëƒ";
+			ëŠªì§€ëŒ€_í¬ê¸°("í”¼ë¼ëƒ", o);
+		} else if(pro<=2000){
+			fh = "ê°€ì‹œê³ ê¸°";
+			ëŠªì§€ëŒ€_í¬ê¸°("ê°€ì‹œê³ ê¸°", o);
+		} else if(pro<=3000){
+			fh = "ì‰ì–´";
+			ëŠªì§€ëŒ€_í¬ê¸°("ì‰ì–´", o);
+		} else if(pro<=4000){
+			fh = "ë¶•ì–´";
+			ëŠªì§€ëŒ€_í¬ê¸°("ë¶•ì–´", o);
+		} else if(pro<=5000){
+			fh = "ì†¡ì‚¬ë¦¬";
+			ëŠªì§€ëŒ€_í¬ê¸°("ì†¡ì‚¬ë¦¬", o);
+		} else if(pro<=6000){
+			fh = "ê°€ë¬¼ì¹˜";
+			ëŠªì§€ëŒ€_í¬ê¸°("ê°€ë¬¼ì¹˜", o);
+		} else if(pro<=7000){
+			fh = "í°ì…ë°°ìŠ¤";
+			ëŠªì§€ëŒ€_í¬ê¸°("í°ì…ë°°ìŠ¤", o);
+		} else if(pro<=7440){
+			fh = "ì²­ê°œêµ¬ë¦¬";
+			ëŠªì§€ëŒ€_í¬ê¸°("ì²­ê°œêµ¬ë¦¬", o);
+		} else if(pro<=7880){
+			fh = "ëŒê³ ê¸°";
+			ëŠªì§€ëŒ€_í¬ê¸°("ëŒê³ ê¸°", o);
+		} else if(pro<=8320){
+			fh = "ë„ë¡±ë‡½";
+			ëŠªì§€ëŒ€_í¬ê¸°("ë„ë¡±ë‡½", o);
+		} else if(pro<=8760){
+			fh = "ì¥ì–´";
+			ëŠªì§€ëŒ€_í¬ê¸°("ì¥ì–´", o);
+		} else if(pro<=9200){
+			fh = "ë©”ê¸°";
+			ëŠªì§€ëŒ€_í¬ê¸°("ë©”ê¸°", o);
+		} else if(pro<=9350) {
+			fh = "í™©ì†Œê°œêµ¬ë¦¬";
+			ëŠªì§€ëŒ€_í¬ê¸°("í™©ì†Œê°œêµ¬ë¦¬", o);
+		} else if(pro<=9500) {
+			fh = "ìë¼";
+			ëŠªì§€ëŒ€_í¬ê¸°("ìë¼", o);
+		} else if(pro<=9650) {
+			fh = "ë±€ì¥ì–´";
+			ëŠªì§€ëŒ€_í¬ê¸°("ë±€ì¥ì–´", o);
+		} else if(pro<=9800) {
+			fh = "ë²„ë“¤ë¶•ì–´";
+			ëŠªì§€ëŒ€_í¬ê¸°("ë²„ë“¤ë¶•ì–´", o);
+		} else {
+			fh = "ì•…ì–´";
+			ëŠªì§€ëŒ€_í¬ê¸°("ì•…ì–´", o);
+		}
+	}
+
+	private void ê°•_ë¬¼ê³ ê¸°(Op o) {
+		pro = Math.abs(r.nextInt(10000)+1);
+		
+		if(pro<=875) {
+			fh = "ì†¡ì‚¬ë¦¬";
+			ê°•_í¬ê¸°("ì†¡ì‚¬ë¦¬", o);
+		} else if(pro<=1750){
+			fh = "ë¯¼ì–´";
+			ê°•_í¬ê¸°("ë¯¼ì–´", o);
+		} else if(pro<=2625){
+			fh = "ë¬´ì§€ê°œì†¡ì–´";
+			ê°•_í¬ê¸°("ë¬´ì§€ê°œì†¡ì–´", o);
+		} else if(pro<=3500){
+			fh = "ì—°ì–´";
+			ê°•_í¬ê¸°("ì—°ì–´", o);
+		} else if(pro<=4375){
+			fh = "í”¼ë¼ëƒ";
+			ê°•_í¬ê¸°("í”¼ë¼ëƒ", o);
+		} else if(pro<=5250){
+			fh = "ì‰ì–´";
+			ê°•_í¬ê¸°("ì‰ì–´", o);
+		} else if(pro<=6125){
+			fh = "ë¶•ì–´";
+			ê°•_í¬ê¸°("ë¶•ì–´", o);
+		} else if(pro<=7000){
+			fh = "ê°€ì‹œê³ ê¸°";
+			ê°•_í¬ê¸°("ê°€ì‹œê³ ê¸°", o);
+		} else if(pro<=7800){
+			fh = "ë¯¸ê¾¸ë¼ì§€";
+			ê°•_í¬ê¸°("ë¯¸ê¾¸ë¼ì§€", o);
+		} else if(pro<=8600){
+			fh = "ì¥ì–´";
+			ê°•_í¬ê¸°("ì¥ì–´", o);
+		} else if(pro<=9400){
+			fh = "ë©”ê¸°";
+			ê°•_í¬ê¸°("ë©”ê¸°", o);
+		} else if(pro<=9600){
+			fh = "ë¹„ë‹¨ì‰ì–´";
+			ê°•_í¬ê¸°("ë¹„ë‹¨ì‰ì–´", o);
+		} else if(pro<=9800) {
+			fh = "ì•„í™€ë¡œí‹€";
+			ê°•_í¬ê¸°("ì•„í™€ë¡œí‹€", o);
+		} else {
+			fh = "í°ë™ê°€ë¦¬";
+			ê°•_í¬ê¸°("í°ë™ê°€ë¦¬", o);
+		}
+	}
+	
+	private void ëŠªì§€ëŒ€_í¬ê¸°(String kd, Op o) {
+		double b = 0;
+		Random r = new Random();
+		switch(kd) {
+			case "í”¼ë¼ëƒ":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(13)+14+b);
+				o.í”¼ë¼ëƒ++;			
+				System.out.print("í”¼ë¼ëƒ(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í”¼ë¼ëƒs) {
+					o.í”¼ë¼ëƒs = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ê°€ì‹œê³ ê¸°":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(3)+1);
+				}
+				size = Math.abs(r.nextDouble(5)+3+b);
+				o.ê°€ì‹œê³ ê¸°++;
+				System.out.print("ê°€ì‹œê³ ê¸°(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê°€ì‹œê³ ê¸°s) {
+					o.ê°€ì‹œê³ ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ì‰ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+5);
+				}
+				size = Math.abs(r.nextDouble(75)+30+b);				
+				o.ì‰ì–´++;
+				System.out.print("ì‰ì–´");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‰ì–´) {
+					o.ì‰ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë¶•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(23)+20+b);
+				o.ë¶•ì–´++;
+				System.out.print("ë¶•ì–´");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¶•ì–´s) {
+					o.ë¶•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì†¡ì‚¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(2)+1);
+				}
+				size = Math.abs(r.nextDouble(2)+2+b);
+				o.ì†¡ì‚¬ë¦¬++;
+				System.out.print("ì†¡ì‚¬ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì†¡ì‚¬ë¦¬s) {
+					o.ì†¡ì‚¬ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ê°€ë¬¼ì¹˜":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				size = Math.abs(r.nextDouble(50)+50+b);
+				o.ê°€ë¬¼ì¹˜++;
+				System.out.print("ê°€ë¬¼ì¹˜(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê°€ë¬¼ì¹˜s) {
+					o.ê°€ë¬¼ì¹˜s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "í°ì…ë°°ìŠ¤":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+2);
+				}
+				size = Math.abs(r.nextDouble(35)+25+b);
+				o.í°ì…ë°°ìŠ¤++;
+				System.out.print("í°ì…ë°°ìŠ¤(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í°ì…ë°°ìŠ¤s) {
+					o.í°ì…ë°°ìŠ¤s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì²­ê°œêµ¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(3)+1);
+				}
+				size = Math.abs(r.nextDouble(3)+2+b);
+				o.ì²­ê°œêµ¬ë¦¬++;
+				System.out.print("ì²­ê°œêµ¬ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì²­ê°œêµ¬ë¦¬s) {
+					o.ê°€ì‹œê³ ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ëŒê³ ê¸°":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(5)+10+b);
+				o.ëŒê³ ê¸°++;
+				System.out.print("ëŒê³ ê¸°(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ëŒê³ ê¸°s) {
+					o.ëŒê³ ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;
+			case "ë„ë¡±ë‡½":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(8)+7+b);
+				o.ë„ë¡±ë‡½++;
+				System.out.print("ë„ë¡±ë‡½(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ì„ ë‚šì•˜ë‹¤.");
+				if(size > o.ë„ë¡±ë‡½s) {
+					o.ë„ë¡±ë‡½s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ì¥ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				size = Math.abs(r.nextDouble(70)+30+b);
+				o.ì¥ì–´++;
+				System.out.print("ì¥ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì¥ì–´s) {
+					o.ì¥ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ë©”ê¸°":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				o.ë©”ê¸°++;
+				size = Math.abs(r.nextDouble(70)+30+b);
+				System.out.print("ë©”ê¸°(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë©”ê¸°s) {
+					o.ë©”ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;	
+			case "í™©ì†Œê°œêµ¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(8)+1);
+				}
+				o.í™©ì†Œê°œêµ¬ë¦¬++;
+				size = Math.abs(r.nextDouble(10)+10+b);
+				System.out.print("í™©ì†Œê°œêµ¬ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í™©ì†Œê°œêµ¬ë¦¬s) {
+					o.í™©ì†Œê°œêµ¬ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ìë¼":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				o.ìë¼++;
+				size = Math.abs(r.nextDouble(50)+15+b);
+				System.out.print("ìë¼(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ìë¼s) {
+					o.ìë¼s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ë±€ì¥ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				o.ë±€ì¥ì–´++;
+				size = Math.abs(r.nextDouble(40)+50+b);
+				System.out.print("ë±€ì¥ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë±€ì¥ì–´s) {
+					o.ë±€ì¥ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ë²„ë“¤ë¶•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(3)+1);
+				}
+				o.ë²„ë“¤ë¶•ì–´++;
+				size = Math.abs(r.nextDouble(5)+5+b);
+				System.out.print("ë²„ë“¤ë¶•ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë²„ë“¤ë¶•ì–´s) {
+					o.ë²„ë“¤ë¶•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "ì•…ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(50)+30);
+				}
+				o.ì•…ì–´++;
+				size = Math.abs(r.nextDouble(200)+350+b);
+				System.out.print("ì•…ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì•…ì–´s) {
+					o.ì•…ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì „ì„¤(o);
+				break;			
+		}
+		ì •ë³´.LV_UP(o);
+		ë‚šì‹¯ëŒ€ch(o);
+		ì°Œch(o);
+		ë¯¸ë¼ch(o);
+	}
+
+	private void ê°•_í¬ê¸°(String kd, Op o) {
+		double b = 0;
+		Random r = new Random();
+		switch(kd) {
+			case "ì†¡ì‚¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(2)+1);
+				}
+				size = Math.abs(r.nextDouble(2)+2+b);
+				o.ì†¡ì‚¬ë¦¬++;		
+				System.out.print("ì†¡ì‚¬ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì†¡ì‚¬ë¦¬s) {
+					o.ì†¡ì‚¬ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ë¯¼ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				size = Math.abs(r.nextDouble(30)+33+b);
+				o.ë¯¼ì–´++;
+				System.out.print("ë¯¼ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¯¼ì–´s) {
+					o.ë¯¼ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ë¬´ì§€ê°œì†¡ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				size = Math.abs(r.nextDouble(60)+40+b);				
+				o.ë¬´ì§€ê°œì†¡ì–´++;
+				System.out.print("ë¬´ì§€ê°œì†¡ì–´");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¬´ì§€ê°œì†¡ì–´s) {
+					o.ë¬´ì§€ê°œì†¡ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì—°ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				size = Math.abs(r.nextDouble(30)+50+b);
+				o.ì—°ì–´++;				
+				System.out.print("ì—°ì–´");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì—°ì–´s) {
+					o.ì—°ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "í”¼ë¼ëƒ":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(8)+1);
+				}
+				size = Math.abs(r.nextDouble(12)+14+b);
+				o.í”¼ë¼ëƒ++;
+				System.out.print("í”¼ë¼ëƒ(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í”¼ë¼ëƒs) {
+					o.í”¼ë¼ëƒs = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì‰ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(30)+1);
+				}
+				size = Math.abs(r.nextDouble(95)+25+b);
+				o.ì˜ê°€ë¦¬++;
+				System.out.print("ì‰ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‰ì–´s) {
+					o.ì‰ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë¶•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(25)+20+b);
+				o.ë¶•ì–´++;
+				System.out.print("ë¶•ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¶•ì–´s) {
+					o.ë¶•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ê°€ì‹œê³ ê¸°":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(3)+1);
+				}
+				size = Math.abs(r.nextDouble(5)+3+b);
+				o.ê°€ì‹œê³ ê¸°++;
+				System.out.print("ê°€ì‹œê³ ê¸°(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê°€ì‹œê³ ê¸°s) {
+					o.ê°€ì‹œê³ ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;			
+			case "ë¯¸ê¾¸ë¼ì§€":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(10)+15+b);
+				o.ë¯¸ê¾¸ë¼ì§€++;
+				System.out.print("ë¯¸ê¾¸ë¼ì§€(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¯¸ê¾¸ë¼ì§€s) {
+					o.ë¯¸ê¾¸ë¼ì§€s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;
+			case "ì¥ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				size = Math.abs(r.nextDouble(70)+30+b);
+				o.ì¥ì–´++;
+				System.out.print("ì¥ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì¥ì–´s) {
+					o.ì¥ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ë©”ê¸°":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				size = Math.abs(r.nextDouble(70)+30+b);
+				o.ë©”ê¸°++;
+				System.out.print("ë©”ê¸°(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë©”ê¸°s) {
+					o.ë©”ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ë¹„ë‹¨ì‰ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(25)+1);
+				}
+				o.ë¹„ë‹¨ì‰ì–´++;
+				size = Math.abs(r.nextDouble(70)+40+b);
+				System.out.print("ë¹„ë‹¨ì‰ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¹„ë‹¨ì‰ì–´s) {
+					o.ë¹„ë‹¨ì‰ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;	
+			case "ì•„í™€ë¡œí‹€":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				o.ì•„í™€ë¡œí‹€++;
+				size = Math.abs(r.nextDouble(30)+15+b);
+				System.out.print("ì•„í™€ë¡œí‹€(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì•„í™€ë¡œí‹€s) {
+					o.ì•„í™€ë¡œí‹€s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+			case "í°ë™ê°€ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				o.í°ë™ê°€ë¦¬++;
+				size = Math.abs(r.nextDouble(5)+12+b);
+				System.out.print("í°ë™ê°€ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í°ë™ê°€ë¦¬s) {
+					o.í°ë™ê°€ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+		}
+		ì •ë³´.LV_UP(o);
+		ë‚šì‹¯ëŒ€ch(o);
+		ì°Œch(o);
+		ë¯¸ë¼ch(o);
+	}
+
+	public void í˜¸ìˆ˜_ë¬¼ê³ ê¸°(Op o) {
+		pro = Math.abs(r.nextInt(10000)+1);
+		
+		if(pro<=1000) {
+			fh = "ë¬´ì§€ê°œì†¡ì–´";
+			í˜¸ìˆ˜_í¬ê¸°("ë¬´ì§€ê°œì†¡ì–´", o);
+		} else if(pro<=2000){
+			fh = "ì—°ì–´";
+			í˜¸ìˆ˜_í¬ê¸°("ì—°ì–´", o);
+		} else if(pro<=3000){
+			fh = "ì‰ì–´";
+			í˜¸ìˆ˜_í¬ê¸°("ì‰ì–´", o);
+		} else if(pro<=4000){
+			fh = "ë¶•ì–´";
+			í˜¸ìˆ˜_í¬ê¸°("ë¶•ì–´", o);
+		} else if(pro<=5000){
+			fh = "ê¸ˆë¶•ì–´";
+			í˜¸ìˆ˜_í¬ê¸°("ê¸ˆë¶•ì–´", o);
+		} else if(pro<=6000){
+			fh = "ì˜ê°€ë¦¬";
+			í˜¸ìˆ˜_í¬ê¸°("ì˜ê°€ë¦¬", o);
+		} else if(pro<=7000){
+			fh = "ì†¡ì‚¬ë¦¬";
+			í˜¸ìˆ˜_í¬ê¸°("ì†¡ì‚¬ë¦¬", o);
+		} else if(pro<=7800){
+			fh = "ë¯¸ê¾¸ë¼ì§€";
+			í˜¸ìˆ˜_í¬ê¸°("ë¯¸ê¾¸ë¼ì§€", o);
+		} else if(pro<=8600){
+			fh = "ëŒê³ ê¸°";
+			í˜¸ìˆ˜_í¬ê¸°("ëŒê³ ê¸°", o);
+		} else if(pro<=9400){
+			fh = "ë„ë¡±ë‡½";
+			í˜¸ìˆ˜_í¬ê¸°("ë„ë¡±ë‡½", o);
+		} else if(pro<=9600){
+			fh = "í™©ì†Œê°œêµ¬ë¦¬";
+			í˜¸ìˆ˜_í¬ê¸°("í™©ì†Œê°œêµ¬ë¦¬", o);
+		} else if(pro<=9800){
+			fh = "ë¹„ë‹¨ì‰ì–´";
+			í˜¸ìˆ˜_í¬ê¸°("ë¹„ë‹¨ì‰ì–´", o);
+		} else {
+			fh = "ì•„í™€ë¡œí‹€";
+			í˜¸ìˆ˜_í¬ê¸°("ì•„í™€ë¡œí‹€", o);
+		}
+	}
+	
+	public void í˜¸ìˆ˜_í¬ê¸°(String kd, Op o) {
+		double b = 0;
+		Random r = new Random();
+		switch(kd) {
+			case "ë¬´ì§€ê°œì†¡ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(60)+40+b);
+				o.ë¬´ì§€ê°œì†¡ì–´++;			
+				System.out.print("ë¬´ì§€ê°œì†¡ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¬´ì§€ê°œì†¡ì–´s) {
+					o.ë¬´ì§€ê°œì†¡ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ì—°ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(40)+60+b);
+				o.ì—°ì–´++;
+				System.out.print("ì—°ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì—°ì–´s) {
+					o.ì—°ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;
+			case "ì‰ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(15)+1);
+				}
+				size = Math.abs(r.nextDouble(70)+50+b);				
+				o.ì‰ì–´++;
+				System.out.print("ì‰ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì‰ì–´s) {
+					o.ì‰ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë¶•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(23)+20+b);
+				o.ë¶•ì–´++;
+				System.out.print("ë¶•ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¶•ì–´s) {
+					o.ë¶•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ê¸ˆë¶•ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(30)+5+b);
+				o.ê¸ˆë¶•ì–´++;
+				System.out.print("ê¸ˆë¶•ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ê¸ˆë¶•ì–´s) {
+					o.ê¸ˆë¶•ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì˜ê°€ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(35)+20+b);
+				o.ì˜ê°€ë¦¬++;
+				System.out.print("ì˜ê°€ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì˜ê°€ë¦¬s) {
+					o.ì˜ê°€ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ì†¡ì‚¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(3)+1);
+				}
+				size = Math.abs(r.nextDouble(6)+b);
+				o.ì†¡ì‚¬ë¦¬++;
+				System.out.print("ì†¡ì‚¬ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ì†¡ì‚¬ë¦¬s) {
+					o.ì†¡ì‚¬ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì´ˆ(o);
+				break;	
+			case "ë¯¸ê¾¸ë¼ì§€":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(7)+1);
+				}
+				size = Math.abs(r.nextDouble(5)+15+b);
+				o.ë¯¸ê¾¸ë¼ì§€++;
+				System.out.print("ë¯¸ê¾¸ë¼ì§€(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¯¸ê¾¸ë¼ì§€s) {
+					o.ë¯¸ê¾¸ë¼ì§€s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "ëŒê³ ê¸°":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(5)+10+b);
+				o.ëŒê³ ê¸°++;
+				System.out.print("ëŒê³ ê¸°(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ëŒê³ ê¸°s) {
+					o.ëŒê³ ê¸°s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;
+			case "ë„ë¡±ë‡½":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(5)+1);
+				}
+				size = Math.abs(r.nextDouble(8)+7+b);
+				o.ë„ë¡±ë‡½++;
+				System.out.print("ë„ë¡±ë‡½(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë„ë¡±ë‡½s) {
+					o.ë„ë¡±ë‡½s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ì¤‘(o);
+				break;			
+			case "í™©ì†Œê°œêµ¬ë¦¬":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				size = Math.abs(r.nextDouble(33)+13+b);
+				o.í™©ì†Œê°œêµ¬ë¦¬++;
+				System.out.print("í™©ì†Œê°œêµ¬ë¦¬(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.í™©ì†Œê°œêµ¬ë¦¬s) {
+					o.í™©ì†Œê°œêµ¬ë¦¬s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;			
+			case "ë¹„ë‹¨ì‰ì–´":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(20)+1);
+				}
+				o.ë¹„ë‹¨ì‰ì–´++;
+				size = Math.abs(r.nextDouble(70)+50+b);
+				System.out.print("ë¹„ë‹¨ì‰ì–´(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ë¥¼ ë‚šì•˜ë‹¤.");
+				if(size > o.ë¹„ë‹¨ì‰ì–´s) {
+					o.ë¹„ë‹¨ì‰ì–´s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;	
+			case "ì•„í™€ë¡œí‹€":
+				if(o.ub==1) {
+					b = Math.abs(r.nextDouble(10)+1);
+				}
+				o.ì•„í™€ë¡œí‹€++;
+				size = Math.abs(r.nextDouble(30)+15+b);
+				System.out.print("ì•„í™€ë¡œí‹€(");
+				System.out.printf("%4.2f", size);
+				System.out.println("cm)ì„ ë‚šì•˜ë‹¤.");
+				if(size > o.ì•„í™€ë¡œí‹€s) {
+					o.ì•„í™€ë¡œí‹€s = size;
+					System.out.println("â˜…ì‹ ê¸°ë¡");
+				}
+				ê²½í—˜ì¹˜ìƒ(o);
+				break;		
+		}
+		ì •ë³´.LV_UP(o);
+		ë‚šì‹¯ëŒ€ch(o);
+		ì°Œch(o);
+		ë¯¸ë¼ch(o);
+	}
+
+	private void ê²½í—˜ì¹˜ì´ˆ(Op o) {
+		switch(o.uaf) {
+		case 1:
+			o.EXP += 2;
+			System.out.println("EXP+2");
+			break;
+		case 2:
+			o.EXP += 3;
+			System.out.println("EXP+3(2+1)");
+			break;
+		case 3:
+			o.EXP += 4;
+			System.out.println("EXP+4(2+2)");
+			break;
+		}	
+		
+	}
+	
+
+	private void ê²½í—˜ì¹˜ì¤‘(Op o) {
+		switch(o.uaf) {
+		case 1:
+			o.EXP += 4;
+			System.out.println("EXP+4");
+			break;
+		case 2:
+			o.EXP += 6;
+			System.out.println("EXP+6(4+2)");
+			break;
+		case 3:
+			o.EXP += 8;
+			System.out.println("EXP+8(4+4)");
 			break;
 		}
 		
 	}
-
-	private void µµ°¨_°í´ë(Op o) {
-		System.out.println("--------°í´ë ¹°°í±â--------");
-		System.out.println();
-		System.out.println("-------  µî±Ş : °í´ë --------");
-		System.out.println();
-		
-		if(o.¾Ï¸ğ³ªÀÌÆ®s == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¾Ï¸ğ³ªÀÌÆ®(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.¾Ï¸ğ³ªÀÌÆ®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.½Ç·¯Äµ½ºs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("½Ç·¯Äµ½º(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.½Ç·¯Äµ½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¸ğ»ç»ç¿ì·ç½ºs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¸ğ»ç»ç¿ì·ç½º(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.¸ğ»ç»ç¿ì·ç½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÇÃ·¹½Ã¿À»ç¿ì¸£½ºs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÇÃ·¹½Ã¿À»ç¿ì¸£½º(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.ÇÃ·¹½Ã¿À»ç¿ì¸£½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÀÍÆ¼¿À»ç¿ì¸£½ºs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÀÍÆ¼¿À»ç¿ì¸£½º(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.ÀÍÆ¼¿À»ç¿ì¸£½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÀÍÆ¼¿À»ç¿ì¸£½ºs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÀÍÆ¼¿À»ç¿ì¸£½º(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.ÀÍÆ¼¿À»ç¿ì¸£½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.»ï¿±Ãæs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("»ï¿±Ãæ(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.»ï¿±Ãæs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¾ßÀÌÄÌ·ÓÅ×·ç½ºs == 0) {
-			System.out.println("???(???): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¾ßÀÌÄÌ·ÓÅ×·ç½º(°í´ëÀÇ ÇØ¾È°¡): ");
-			System.out.printf("%4.2f", o.¾ßÀÌÄÌ·ÓÅ×·ç½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		
-	}
-
-	private void µµ°¨_½ÉÇØ(Op o) {
-		System.out.println("--------½ÉÇØ ¹°°í±â--------");
-		System.out.println();
-		System.out.println("-------  µî±Ş : ÇÏ --------");
-		System.out.println();
-		
-		if(o.»ê°¥Ä¡s == 0) {
-			System.out.println("»ê°¥Ä¡(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("»ê°¥Ä¡(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.»ê°¥Ä¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Åõ¶óÄ¡·ùs == 0) {
-			System.out.println("Åõ¶óÄ¡·ù(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Åõ¶óÄ¡·ù(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.Åõ¶óÄ¡·ùs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¼³ÀÎ°Ôs == 0) {
-			System.out.println("¼³ÀÎ°Ô(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¼³ÀÎ°Ô(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.¼³ÀÎ°Ôs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¹ß±¤¿ÀÂ¡¾îs == 0) {
-			System.out.println("¹ß±¤¿ÀÂ¡¾î(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹ß±¤¿ÀÂ¡¾î(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.¹ß±¤¿ÀÂ¡¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : Áß --------");
-		System.out.println();
-		
-		if(o.½ºÆÃ·¹ÀÌs == 0) {
-			System.out.println("½ºÆÃ·¹ÀÌ(½ÉÇØ, ¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("½ºÆÃ·¹ÀÌ(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.½ºÆÃ·¹ÀÌs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.³ª¹µÀÙÇØ·æs == 0) {
-			System.out.println("³ª¹µÀÙÇØ·æ(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("³ª¹µÀÙÇØ·æ(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.³ª¹µÀÙÇØ·æs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¸®º»Àå¾îs == 0) {
-			System.out.println("¸®º»Àå¾î(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¸®º»Àå¾î(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.¸®º»Àå¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÇØÆÄ¸®s == 0) {
-			System.out.println("ÇØÆÄ¸®(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÇØÆÄ¸®(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.ÇØÆÄ¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Àü±â°¡¿À¸®s == 0) {
-			System.out.println("Àü±â°¡¿À¸®(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Àü±â°¡¿À¸®(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.Àü±â°¡¿À¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : »ó --------");
-		System.out.println();
-		
-		if(o.½ÉÇØ¾ÇÄ¡s == 0) {
-			System.out.println("½ÉÇØ¾ÇÄ¡(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("½ÉÇØ¾ÇÄ¡(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.½ÉÇØ¾ÇÄ¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.½ÉÇØ¾Æ±Ís == 0) {
-			System.out.println("½ÉÇØ¾Æ±Í(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("½ÉÇØ¾Æ±Í(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.½ÉÇØ¾Æ±Ís);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÆÓ¸®ÄÁÀå¾îs == 0) {
-			System.out.println("ÆÓ¸®ÄÁÀå¾î(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÆÓ¸®ÄÁÀå¾î(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.ÆÓ¸®ÄÁÀå¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÇØÃ¼Æ®ÇÇ½Ãs == 0) {
-			System.out.println("ÇØÃ¼Æ®ÇÇ½Ã(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÇØÃ¼Æ®ÇÇ½Ã(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.ÇØÃ¼Æ®ÇÇ½Ãs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºí·ìÇÇ½Ã == 0) {
-			System.out.println("ºí·ìÇÇ½Ã(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºí·ìÇÇ½Ã(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.ºí·ìÇÇ½Ãs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÃÊ·Õ¾Æ±Ís == 0) {
-			System.out.println("ÃÊ·Õ¾Æ±Í(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÃÊ·Õ¾Æ±Í(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.ÃÊ·Õ¾Æ±Ís);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : Àü¼³ --------");
-		System.out.println();
-		
-		if(o.Å©¶óÄËs == 0) {
-			System.out.println("Å©¶óÄË(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Å©¶óÄË(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.Å©¶óÄËs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÆØÅõ½ºs == 0) {
-			System.out.println("ÆØÅõ½º(½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÆØÅõ½º(½ÉÇØ): ");
-			System.out.printf("%4.2f", o.ÆØÅõ½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
+	private void ê²½í—˜ì¹˜ìƒ(Op o) {
+		switch(o.uaf) {
+		case 1:
+			o.EXP += 10;
+			System.out.println("EXP+10");
+			break;
+		case 2:
+			o.EXP += 15;
+			System.out.println("EXP+15(10+5)");
+			break;
+		case 3:
+			o.EXP += 20;
+			System.out.println("EXP+20(10+10)");
+			break;
 		}
 		
 	}
-
-	private void µµ°¨_¹Ù´Ù(Op o) {
-		System.out.println("--------¹Ù´Ù ¹°°í±â--------");
-		System.out.println();
-		System.out.println("-------  µî±Ş : ÇÏ --------");
-		System.out.println();
-		
-		if(o.¿ÀÂ¡¾îs == 0) {
-			System.out.println("¿ÀÂ¡¾î(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¿ÀÂ¡¾î(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.¿ÀÂ¡¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.°¥Ä¡s == 0) {
-			System.out.println("°¥Ä¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("°¥Ä¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.°¥Ä¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¸êÄ¡s == 0) {
-			System.out.println("¸êÄ¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¸êÄ¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.¸êÄ¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.²ÇÄ¡s == 0) {
-			System.out.println("²ÇÄ¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("²ÇÄ¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.²ÇÄ¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.»ïÄ¡s == 0) {
-			System.out.println("»ïÄ¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("»ïÄ¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.»ïÄ¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¹æ¾îs == 0) {
-			System.out.println("¹æ¾î(¹æ¾î): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹æ¾î(¹æ¾î): ");
-			System.out.printf("%4.2f", o.¹æ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : Áß --------");
-		System.out.println();
-		
-		if(o.¿ì·°s == 0) {
-			System.out.println("¿ì·°(¹Ù´Ù)");
-		} else {
-			System.out.print("¿ì·°(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.¿ì·°s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÂüÄ¡s == 0) {
-			System.out.println("ÂüÄ¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÂüÄ¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.ÂüÄ¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºÒ°¡»ç¸®s == 0) {
-			System.out.println("ºÒ°¡»ç¸®(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºÒ°¡»ç¸®(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.ºÒ°¡»ç¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Ã»»õÄ¡s == 0) {
-			System.out.println("Ã»»õÄ¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Ã»»õÄ¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.Ã»»õÄ¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
+	
+	private void ê²½í—˜ì¹˜ì „ì„¤(Op o) {
+		switch(o.uaf) {
+		case 1:
+			o.EXP += 20;
+			System.out.println("EXP+20");
+			break;
+		case 2:
+			o.EXP += 30;
+			System.out.println("EXP+30(20+10)");
+			break;
+		case 3:
+			o.EXP += 40;
+			System.out.println("EXP+40(20+20)");
+			break;
 		}	
 		
-		if(o.½ºÆÃ·¹ÀÌs == 0) {
-			System.out.println("½ºÆÃ·¹ÀÌ(¹Ù´Ù, ½ÉÇØ): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("½ºÆÃ·¹ÀÌ(¹Ù´Ù, ½ÉÇØ): ");
-			System.out.printf("%4.2f", o.½ºÆÃ·¹ÀÌs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.º¹¾îs == 0) {
-			System.out.println("º¹¾î(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("º¹¾î(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.º¹¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.°³º¹Ä¡s == 0) {
-			System.out.println("°³º¹Ä¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("°³º¹Ä¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.°³º¹Ä¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : »ó --------");
-		System.out.println();
-		
-		if(o.µ¹°í·¡s == 0) {
-			System.out.println("µ¹°í·¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("µ¹°í·¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.µ¹°í·¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¹ü°í·¡s == 0) {
-			System.out.println("¹ü°í·¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹ü°í·¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.¹ü°í·¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Åé»ó¾îs == 0) {
-			System.out.println("Åé»ó¾î(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Åé»ó¾î(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.Åé»ó¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		
-		System.out.println("-------  µî±Ş : Àü¼³ --------");
-		System.out.println();
-		
-		if(o.Èò¼ö¿°°í·¡s == 0) {
-			System.out.println("Èò¼ö¿°°í·¡(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Èò¼ö¿°°í·¡(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.Èò¼ö¿°°í·¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¸Ş°¥·Îµ·s == 0) {
-			System.out.println("¸Ş°¥·Îµ·(¹Ù´Ù): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¸Ş°¥·Îµ·(¹Ù´Ù): ");
-			System.out.printf("%4.2f", o.¸Ş°¥·Îµ·s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("---------------------------");
+	}
+	
+	private void ê²½í—˜ì¹˜ê³ ëŒ€(Op o) {
+		switch(o.uaf) {
+		case 1:
+			o.EXP += 30;
+			System.out.println("EXP+30");
+			break;
+		case 2:
+			o.EXP += 45;
+			System.out.println("EXP+45(30+15)");
+			break;
+		case 3:
+			o.EXP += 60;
+			System.out.println("EXP+60(30+30)");
+			break;
+		}	
 		
 	}
-
-	private void µµ°¨_´ËÁö´ë(Op o) {
-		System.out.println("--------´ËÁö´ë ¹°°í±â--------");
-		System.out.println();
-		System.out.println("-------  µî±Ş : ÇÏ --------");
-		System.out.println();
-		
-		if(o.ÇÇ¶ó³Äs == 0) {
-			System.out.println("ÇÇ¶ó³Ä(°­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÇÇ¶ó³Ä(°­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.ÇÇ¶ó³Äs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
+	
+	private void ë‚šì‹¯ëŒ€ch(Op o) {
+		switch(o.ufr) {
+		case 1:
+			o.ê¸°ë³¸ë‚šì‹¯ëŒ€ -= 1;
+			if(o.ê¸°ë³¸ë‚šì‹¯ëŒ€ == 0) {
+				o.ufr = 0;
+				System.out.println("(ë‚šì‹¯ëŒ€ì˜ ë‚´êµ¬ë„ê°€ 0ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.)");
+			} break;	
+		case 2:
+			o.ê³ ê¸‰ë‚šì‹¯ëŒ€ -= 1;
+			if(o.ê³ ê¸‰ë‚šì‹¯ëŒ€ == 0) {
+				o.ufr = 0;
+				System.out.println("(ë‚šì‹¯ëŒ€ì˜ ë‚´êµ¬ë„ê°€ 0ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.)");
+			} break;
+		case 3:
+			o.ëŒ€ë‹¨í•œë‚šì‹¯ëŒ€ -= 1;
+			if(o.ëŒ€ë‹¨í•œë‚šì‹¯ëŒ€ == 0) {
+				o.ufr = 0;
+				System.out.println("(ë‚šì‹¯ëŒ€ì˜ ë‚´êµ¬ë„ê°€ 0ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.)");
+			} break;
 		}
-		
-		if(o.°¡½Ã°í±âs == 0) {
-			System.out.println("°¡½Ã°í±â(°­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("°¡½Ã°í±â(°­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.°¡½Ã°í±âs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.À×¾îs == 0) {
-			System.out.println("À×¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("À×¾î(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.À×¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºØ¾îs == 0) {
-			System.out.println("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.ºØ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÇÇ¶ó³Äs == 0) {
-			System.out.println("ÇÇ¶ó³Ä(°­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÇÇ¶ó³Ä(°­): ");
-			System.out.printf("%4.2f", o.ÇÇ¶ó³Äs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.À×¾îs == 0) {
-			System.out.println("À×¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("À×¾î(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.À×¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºØ¾îs == 0) {
-			System.out.println("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.ºØ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¼Û»ç¸®s == 0) {
-			System.out.println("¼Û»ç¸®(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¼Û»ç¸®(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¼Û»ç¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.°¡¹°Ä¡s == 0) {
-			System.out.println("°¡¹°Ä¡(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("°¡¹°Ä¡(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.°¡¹°Ä¡s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Å«ÀÔ¹è½ºs == 0) {
-			System.out.println("Å«ÀÔ¹è½º(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Å«ÀÔ¹è½º(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.Å«ÀÔ¹è½ºs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : Áß --------");
-		System.out.println();
-		
-		if(o.Ã»°³±¸¸®s == 0) {
-			System.out.println("Ã»°³±¸¸®(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Ã»°³±¸¸®(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.Ã»°³±¸¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.µ¹°í±âs == 0) {
-			System.out.println("µ¹°í±â(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("µ¹°í±â(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.µ¹°í±âs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.µµ·Õ´¨s == 0) {
-			System.out.println("µµ·Õ´¨(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("µµ·Õ´¨(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.µµ·Õ´¨s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Àå¾îs == 0) {
-			System.out.println("Àå¾î(°­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Àå¾î(°­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.Àå¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¸Ş±âs == 0) {
-			System.out.println("¸Ş±â(°­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¸Ş±â(°­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¸Ş±âs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : »ó --------");
-		System.out.println();
-		
-		if(o.È²¼Ò°³±¸¸®s == 0) {
-			System.out.println("È²¼Ò°³±¸¸®(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("È²¼Ò°³±¸¸®(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.È²¼Ò°³±¸¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÀÚ¶ó == 0) {
-			System.out.println("ÀÚ¶ó(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÀÚ¶ó(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.ÀÚ¶ós);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¹ìÀå¾îs == 0) {
-			System.out.println("¹ìÀå¾î(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹ìÀå¾î(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¹ìÀå¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¹öµéºØ¾îs == 0) {
-			System.out.println("¹öµéºØ¾î(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹öµéºØ¾î(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¹öµéºØ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println("-------  µî±Ş : Àü¼³ --------");
-		System.out.println();
-		
-		if(o.¾Ç¾îs == 0) {
-			System.out.println("¾Ç¾î(´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¾Ç¾î(´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¾Ç¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("---------------------------");
 		
 	}
-
-	private void µµ°¨_°­(Op o) {
-		System.out.println("--------°­ ¹°°í±â--------");
-		System.out.println();
-		System.out.println("-------  µî±Ş : ÇÏ --------");
-		System.out.println();
-		
-		if(o.¼Û»ç¸®s == 0) {
-			System.out.println("¼Û»ç¸®(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¼Û»ç¸®(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¼Û»ç¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
+	private void ì°Œch(Op o) {
+		switch(o.uaf) {
+		case 1:
+			o.ê¸°ë³¸ì°Œ -= 1;
+			if(o.ê¸°ë³¸ì°Œ == 0) {
+				o.uaf = 0;
+				System.out.println("(ì°Œì˜ ë‚´êµ¬ë„ê°€ 0ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.)");
+			}
+			break;
+		case 2:
+			o.ê³ ê¸‰ì°Œ -= 1;
+			if(o.ê³ ê¸‰ì°Œ == 0) {
+				o.uaf = 0;
+				System.out.println("(ì°Œì˜ ë‚´êµ¬ë„ê°€ 0ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.)");
+			}
+			break;
+		case 3:
+			o.ì‹ ë¹„í•œì°Œ -= 1;
+			if(o.ì‹ ë¹„í•œì°Œ == 0) {
+				o.uaf = 0;
+				System.out.println("(ì°Œì˜ ë‚´êµ¬ë„ê°€ 0ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.)");
+			}
+			break;
 		}
-		
-		if(o.¹Î¾îs == 0) {
-			System.out.println("¹Î¾î(°­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹Î¾î(°­): ");
-			System.out.printf("%4.2f", o.¹Î¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¹«Áö°³¼Û¾îs == 0) {
-			System.out.println("¹«Áö°³¼Û¾î(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹«Áö°³¼Û¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¹«Áö°³¼Û¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¿¬¾îs == 0) {
-			System.out.println("¿¬¾î(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¿¬¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¿¬¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ÇÇ¶ó³Äs == 0) {
-			System.out.println("ÇÇ¶ó³Ä(°­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ÇÇ¶ó³Ä(°­): ");
-			System.out.printf("%4.2f", o.ÇÇ¶ó³Äs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.À×¾îs == 0) {
-			System.out.println("À×¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("À×¾î(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.À×¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºØ¾îs == 0) {
-			System.out.println("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.ºØ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.°¡½Ã°í±âs == 0) {
-			System.out.println("°¡½Ã°í±â(°­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("°¡½Ã°í±â(°­, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.°¡½Ã°í±âs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : Áß --------");
-		System.out.println();
-		
-		if(o.¹Ì²Ù¶óÁös == 0) {
-			System.out.println("¹Ì²Ù¶óÁö(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹Ì²Ù¶óÁö(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¹Ì²Ù¶óÁös);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Àå¾îs == 0) {
-			System.out.println("Àå¾î(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Àå¾î(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.Àå¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¸Ş±âs == 0) {
-			System.out.println("¸Ş±â(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¸Ş±â(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.¸Ş±âs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : »ó --------");
-		System.out.println();
-		
-		if(o.ºñ´ÜÀ×¾îs == 0) {
-			System.out.println("ºñ´ÜÀ×¾î(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºñ´ÜÀ×¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.ºñ´ÜÀ×¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¾ÆÈ¦·ÎÆ²s == 0) {
-			System.out.println("¾ÆÈ¦·ÎÆ²(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¾ÆÈ¦·ÎÆ²(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¾ÆÈ¦·ÎÆ²s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.Èòµ¿°¡¸®s == 0) {
-			System.out.println("Èòµ¿°¡¸®(°­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("Èòµ¿°¡¸®(°­): ");
-			System.out.printf("%4.2f", o.Èòµ¿°¡¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("---------------------------");
 		
 	}
-
-	private void µµ°¨_È£¼ö(Op o) {
-		System.out.println("--------È£¼ö ¹°°í±â--------");
-		System.out.println();
-		System.out.println("-------  µî±Ş : ÇÏ --------");
-		System.out.println();
-		
-		if(o.¹«Áö°³¼Û¾îs == 0) {
-			System.out.println("¹«Áö°³¼Û¾î(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹«Áö°³¼Û¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¹«Áö°³¼Û¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
+	
+	private void ë¯¸ë¼ch(Op o) {
+		switch(o.ub) {
+		case 1:
+			o.ë–¡ë°¥ -= 1;
+			if(o.ë–¡ë°¥ == 0) {
+				o.ub = 0;
+				System.out.println("(ë¯¸ë¼ë¥¼ ëª¨ë‘ ì†Œëª¨í•˜ì˜€ìŠµë‹ˆë‹¤.)");
+			}
+			break;
+		case 2:
+			o.ê°¯ì§€ë ì´ -= 1;
+			if(o.ê°¯ì§€ë ì´ == 0) {
+				o.ub = 0;
+				System.out.println("(ë¯¸ë¼ë¥¼ ëª¨ë‘ ì†Œëª¨í•˜ì˜€ìŠµë‹ˆë‹¤.)");
+			}
+			break;
+		case 3:
+			o.ë¯¼ë¬¼ìƒˆìš° -= 1;
+			if(o.ë¯¼ë¬¼ìƒˆìš° == 0) {
+				o.ub = 0;
+				System.out.println("(ë¯¸ë¼ë¥¼ ëª¨ë‘ ì†Œëª¨í•˜ì˜€ìŠµë‹ˆë‹¤.)");
+			}
+			break;
 		}
-		
-		if(o.¿¬¾îs == 0) {
-			System.out.println("¿¬¾î(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¿¬¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¿¬¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.À×¾îs == 0) {
-			System.out.println("À×¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("À×¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.À×¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºØ¾îs == 0) {
-			System.out.println("ºØ¾î(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºØ¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.ºØ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.±İºØ¾îs == 0) {
-			System.out.println("±İºØ¾î(È£¼ö): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("±İºØ¾î(È£¼ö): ");
-			System.out.printf("%4.2f", o.±İºØ¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.½î°¡¸®s == 0) {
-			System.out.println("½î°¡¸®(È£¼ö): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("½î°¡¸®(È£¼ö): ");
-			System.out.printf("%4.2f", o.½î°¡¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¼Û»ç¸®s == 0) {
-			System.out.println("¼Û»ç¸®(È£¼ö, °­, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¼Û»ç¸®(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¼Û»ç¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : Áß --------");
-		System.out.println();
-		
-		if(o.¹Ì²Ù¶óÁös == 0) {
-			System.out.println("¹Ì²Ù¶óÁö(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¹Ì²Ù¶óÁö(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¹Ì²Ù¶óÁös);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.µ¹°í±âs == 0) {
-			System.out.println("µ¹°í±â(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("µ¹°í±â(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.µ¹°í±âs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.µµ·Õ´¨s == 0) {
-			System.out.println("µµ·Õ´¨(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("µµ·Õ´¨(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.µµ·Õ´¨s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("-------  µî±Ş : »ó --------");
-		System.out.println();
-		
-		if(o.È²¼Ò°³±¸¸®s == 0) {
-			System.out.println("È²¼Ò°³±¸¸®(È£¼ö, ´ËÁö´ë): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("È²¼Ò°³±¸¸®(È£¼ö, ´ËÁö´ë): ");
-			System.out.printf("%4.2f", o.È²¼Ò°³±¸¸®s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.ºñ´ÜÀ×¾îs == 0) {
-			System.out.println("ºñ´ÜÀ×¾î(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("ºñ´ÜÀ×¾î(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.ºñ´ÜÀ×¾îs);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		if(o.¾ÆÈ¦·ÎÆ²s == 0) {
-			System.out.println("¾ÆÈ¦·ÎÆ²(È£¼ö, °­): ¹Ì¹ß°ß");
-		} else {
-			System.out.print("¾ÆÈ¦·ÎÆ²(È£¼ö, °­): ");
-			System.out.printf("%4.2f", o.¾ÆÈ¦·ÎÆ²s);
-			System.out.println("cm (ÃÖ°í±â·Ï)");
-		}
-		
-		System.out.println();
-		System.out.println("---------------------------");
 		
 	}
 }
